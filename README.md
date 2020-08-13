@@ -1,5 +1,5 @@
 # Anthos
-Eks and Gke on Gke Hub
+Aws Eks and Gcp Gke on Anthos
 
 ## Getting Started (WIP)
 
@@ -11,5 +11,3 @@ terraform validate
 terraform plan
 terraform apply --auto-approve
 ```
-
-gcloud container clusters get-credentials my-gke-cluster --region=us-central1
