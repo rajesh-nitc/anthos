@@ -28,7 +28,7 @@ module "my-cluster" {
   worker_groups = [
     {
       instance_type = "t2.small"
-      asg_max_size  = 2
+      asg_max_size  = 5
     }
   ]
 }

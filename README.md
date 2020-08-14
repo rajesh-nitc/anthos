@@ -1,8 +1,25 @@
 # Anthos
 Aws Eks and Gcp Gke on Anthos
+> Gke on Aws is out of scope as ```anthos-gke``` cli is not public
 
 ## Getting Started
 
+### Create and Register Clusters
+```
+./_helpers/workstation.sh
+cd terraform/environments/dev/create-register-clusters
+terraform init
+terraform plan
+terraform apply --auto-approve
+```
+### Install ASM on Registered Clusters
+```
+cd anthos-service-mesh
+./asm_on_eks.sh
+./asm_on_gke.sh
+```
+
+### Introduce ACM
 
 ## Troubleshooting
 
