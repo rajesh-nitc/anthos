@@ -1,6 +1,6 @@
 # Anthos
 Aws Eks and Gcp Gke on Anthos
-> Gke on Aws is out of scope as ```anthos-gke``` cli is not public
+> Gke on Aws is out of scope as access to anthos-gke cli is not public
 
 ## Getting Started
 
