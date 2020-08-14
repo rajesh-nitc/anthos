@@ -1,5 +1,13 @@
 #!/bin/bash
 
+# Install on workstation
+# gcloud
+# gsutil
+# aws cli
+# aws-iam-authenticator
+# kubectl
+# terraform
+
 set -eux
 
 export PROJECT_ID=$(gcloud config get-value project)
