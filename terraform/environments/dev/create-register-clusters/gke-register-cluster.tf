@@ -54,7 +54,7 @@ resource "google_container_node_pool" "node_pool" {
   }
 }
 
-resource "null_resource" "register" {
+resource "null_resource" "register-gke" {
 
   provisioner "local-exec" {
     interpreter = ["bash", "-exc"]

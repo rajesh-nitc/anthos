@@ -9,3 +9,9 @@ variable region {
   default     = "us-central1"
   description = "description"
 }
+
+variable ksa_name {
+  type        = string
+  default     = "ksa5"
+  description = "description"
+}
