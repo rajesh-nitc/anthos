@@ -60,11 +60,10 @@ resource "null_resource" "login" {
     command     = <<EOT
     export KUBECONFIG=./kubeconfig_${module.my-cluster.cluster_id}
     KSA_NAME="${var.ksa_name}"
-    kubectl create serviceaccount $KSA_NAME
-    kubectl create clusterrolebinding $KSA_NAME-view-binding --clusterrole view --serviceaccount default:$KSA_NAME
-    kubectl create clusterrolebinding $KSA_NAME-node-reader-binding --clusterrole node-reader --serviceaccount default:$KSA_NAME
-    SECRET_NAME=$(kubectl get serviceaccount $KSA_NAME -o jsonpath='{$.secrets[0].name}')
-    kubectl get secret $SECRET_NAME -o jsonpath='{$.data.token}' | base64 --decode
+    kubectl create serviceaccount -n kube-system $KSA_NAME
+    kubectl create clusterrolebinding $KSA_NAME-binding --clusterrole cluster-admin --serviceaccount kube-system:$KSA_NAME
+    SECRET_NAME=$(kubectl get serviceaccount -n kube-system $KSA_NAME -o jsonpath='{$.secrets[0].name}')
+    kubectl get secret -n kube-system $SECRET_NAME -o jsonpath='{$.data.token}' | base64 -d | sed $'s/$/\\\n/g'
     EOT
     
   }

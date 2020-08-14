@@ -12,6 +12,6 @@ variable region {
 
 variable ksa_name {
   type        = string
-  default     = "ksa5"
+  default     = "admin-user"
   description = "description"
 }
