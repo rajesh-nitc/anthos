@@ -47,4 +47,5 @@ kpt cfg set asm gcloud.core.project ${PROJECT_ID}
 kpt cfg set asm gcloud.compute.location ${CLUSTER_LOCATION}
 
 istioctl install -f asm/cluster/istio-operator.yaml
+kubectl create namespace my-namespace
 kubectl label namespace my-namespace istio-injection=enabled --overwrite

@@ -9,6 +9,7 @@ cd istio-1.6.5-asm.7
 export PATH=$PWD/bin:$PATH
 
 kubectl create namespace istio-system
+kubectl create namespace my-namespace
 istioctl install --set profile=asm-multicloud
 kubectl label namespace my-namespace istio-injection=enabled --overwrite
 

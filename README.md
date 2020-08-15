@@ -15,8 +15,8 @@ terraform apply --auto-approve
 ### Install ASM on Registered Clusters
 ```
 cd anthos-service-mesh
-./asm_on_eks.sh
-./asm_on_gke.sh
+./eks/asm_on_eks.sh
+./gke/asm_on_gke.sh
 ```
 
 ### Introduce ACM
