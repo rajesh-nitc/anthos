@@ -16,6 +16,7 @@ resource "google_container_cluster" "primary" {
   name     = "my-gke-cluster"
   location = "us-central1"
   remove_default_node_pool = true
+  initial_node_count = 1
 
   master_auth {
     username = ""
@@ -31,11 +32,11 @@ resource "google_container_node_pool" "node_pool" {
   name       = "my-node-pool"
   location   = "us-central1"
   cluster    = google_container_cluster.primary.name
-  node_count = 4
+  node_count = 1
 
   node_config {
     preemptible  = false
-    machine_type = "e2-standard-4"
+    machine_type = "e2-medium"
 
     metadata = {
       disable-legacy-endpoints = "true"

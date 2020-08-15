@@ -2,9 +2,16 @@
 
 set -eux
 
+export KUBECONFIG=/home/rajesh_debian/.kube/config
 export PROJECT_ID=$(gcloud config get-value project)
+export CLUSTER_NAME=my-gke-cluster
+export CLUSTER_LOCATION=us-central1
 PROJECT_NUMBER=$(gcloud projects list --filter="$PROJECT_ID" --format="value(PROJECT_NUMBER)")
 gcloud config set project $PROJECT_ID
+gcloud config set compute/region ${CLUSTER_LOCATION}
+export WORKLOAD_POOL=${PROJECT_ID}.svc.id.goog
+export MESH_ID="proj-${PROJECT_NUMBER}"
+
 gcloud services enable \
     container.googleapis.com \
     compute.googleapis.com \
@@ -20,14 +27,9 @@ gcloud services enable \
     gkehub.googleapis.com \
     cloudresourcemanager.googleapis.com
 
-export CLUSTER_NAME=my-gke-cluster
-export CLUSTER_LOCATION=us-central1
-export WORKLOAD_POOL=${PROJECT_ID}.svc.id.goog
-export MESH_ID="proj-${PROJECT_NUMBER}"
-gcloud config set compute/region ${CLUSTER_LOCATION}
-gcloud container clusters update ${CLUSTER_NAME} --update-labels=mesh_id=${MESH_ID}
-gcloud container clusters update ${CLUSTER_NAME} --workload-pool=${WORKLOAD_POOL}
-gcloud container clusters update ${CLUSTER_NAME} --enable-stackdriver-kubernetes
+gcloud container clusters update ${CLUSTER_NAME} --region=$CLUSTER_LOCATION --update-labels=mesh_id=${MESH_ID}
+gcloud container clusters update ${CLUSTER_NAME} --region=$CLUSTER_LOCATION --workload-pool=${WORKLOAD_POOL}
+gcloud container clusters update ${CLUSTER_NAME} --region=$CLUSTER_LOCATION --enable-stackdriver-kubernetes
 
 curl --request POST \
   --header "Authorization: Bearer $(gcloud auth print-access-token)" \
