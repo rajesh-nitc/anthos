@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# workstation requires gcloud, aws cli, aws-iam-authenticator, kubectl, terraform, kpt
+# workstation requires gcloud, aws cli, aws-iam-authenticator, kubectl, terraform, kpt, nomos
 
 set -eux
 

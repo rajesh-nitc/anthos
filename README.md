@@ -1,6 +1,6 @@
 # Anthos
 Aws Eks and Gcp Gke on Anthos
-> Gke on Aws is out of scope as access to anthos-gke cli is not public
+> Gke on Aws is out of scope. Access to anthos-gke cli is not there.
 
 ## Getting Started
 
@@ -12,15 +12,30 @@ terraform init
 terraform plan
 terraform apply --auto-approve
 ```
-### Install ASM on Registered Clusters
+### Install ASM on Registered Clusters (EKS WIP)
 ```
 cd anthos-service-mesh
 ./eks/asm_on_eks.sh
 ./gke/asm_on_gke.sh
 ```
 
-### Introduce ACM
+### Introduce ACM (WIP)
 
+Install the operator:
+```
+# Add Ssh public key to Github
+./_helpers/install-acm-operator.sh
+```
+Initialize and Configure ACM Repo
+```
+cd anthos-config-management
+nomos init
+```
+
+### Deploy Application Resources (WIP)
+```
+helm create helm
+```
 ## Troubleshooting
 
 Logs of gke-connet pod:

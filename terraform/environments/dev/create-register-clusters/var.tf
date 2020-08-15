@@ -10,8 +10,8 @@ variable region {
   description = "description"
 }
 
-variable ksa_name {
-  type        = string
-  default     = "admin-user"
-  description = "description"
-}
+# variable ksa_name {
+#   type        = string
+#   default     = "admin-user"
+#   description = "description"
+# }
