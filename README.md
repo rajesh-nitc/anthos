@@ -36,7 +36,7 @@ nomos init
 ```
 ./_helpers/deploy-app-gke.sh
 ```
-## Troubleshooting
+### Troubleshooting
 
 Logs of gke-connet pod:
 ```
