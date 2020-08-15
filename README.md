@@ -32,9 +32,9 @@ cd anthos-config-management
 nomos init
 ```
 
-### Deploy Application Resources (WIP)
+### Deploy App (WIP)
 ```
-helm create helm
+./_helpers/deploy-app-gke.sh
 ```
 ## Troubleshooting
 
