@@ -5,7 +5,7 @@ Eks and Gke on Anthos
 ## Getting Started
 
 ### Create and Register Clusters
-Gke cluster: public, regional
+Gke cluster: public, regional \
 Eks cluster: public, regional
 ```
 ./_helpers/workstation.sh
