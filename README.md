@@ -1,14 +1,17 @@
 # Anthos
-Aws Eks and Gcp Gke on Anthos
-> Gke on Aws is out of scope. Access to anthos-gke cli is not there.
+Eks and Gke on Anthos
+> Gke on Aws is out of scope for now as access to anthos-gke cli is not there
 
 ## Getting Started
 
 ### Create and Register Clusters
+Gke cluster: public, regional
+Eks cluster: public, regional
 ```
 ./_helpers/workstation.sh
 cd terraform/environments/dev/create-register-clusters
 terraform init
+terraform validate
 terraform plan
 terraform apply --auto-approve
 ```
@@ -21,12 +24,12 @@ cd anthos-service-mesh
 
 ### Introduce ACM (WIP)
 
-Install the operator:
+Install the ACM Operator:
 ```
 # Add Ssh public key to Github
 ./_helpers/install-acm-operator.sh
 ```
-Initialize and Configure ACM Repo
+Initialize and Configure ACM Repo:
 ```
 cd anthos-config-management
 nomos init
@@ -35,6 +38,7 @@ nomos init
 ### Deploy App (WIP)
 ```
 ./_helpers/deploy-app-gke.sh
+./_helpers/deploy-app-eks.sh
 ```
 ### Troubleshooting
 

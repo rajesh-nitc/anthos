@@ -28,6 +28,7 @@
 #   worker_groups = [
 #     {
 #       instance_type = "t2.small"
+#       asg_desired_capacity          = 3
 #       asg_max_size  = 5
 #     }
 #   ]

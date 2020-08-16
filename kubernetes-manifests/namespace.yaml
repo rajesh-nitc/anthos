@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name:  my-namespace
+  annotations:
+    configmanagement.gke.io/managed: enabled
+  labels:
+    istio-injection: enabled
+    

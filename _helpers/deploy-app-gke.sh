@@ -3,4 +3,4 @@
 set -eux
 
 export KUBECONFIG=/home/rajesh_debian/.kube/config
-kubectl apply -f ../app/
+kubectl apply -f ../kubernetes-manifests/
