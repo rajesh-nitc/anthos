@@ -1,15 +1,13 @@
 kind: Service
 apiVersion: v1
 metadata:
-  name:  first-service
+  name: my-service
   namespace: my-namespace
-  annotations:
-    configmanagement.gke.io/managed: enabled
 spec:
   selector:
-    app:  first-app
-  type:  ClusterIP
+    name: my-app
+  type: ClusterIP
   ports:
-  - name:  name-of-the-port
-    port:  80
-    targetPort:  80
+    - name: http
+      port: 80
+      targetPort: 80

@@ -18,6 +18,10 @@ resource "google_container_cluster" "primary" {
   remove_default_node_pool = true
   initial_node_count = 1
 
+  # workload_identity_config {
+  #     identity_namespace = "${var.project_id}.svc.id.goog"
+  #   }
+
   master_auth {
     username = ""
     password = ""
@@ -37,6 +41,10 @@ resource "google_container_node_pool" "node_pool" {
   node_config {
     preemptible  = false
     machine_type = "e2-medium"
+
+    # workload_metadata_config {
+    #     node_metadata = "GKE_METADATA_SERVER"
+    #   }
 
     metadata = {
       disable-legacy-endpoints = "true"

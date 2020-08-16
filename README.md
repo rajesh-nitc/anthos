@@ -39,12 +39,18 @@ Initialize and Configure ACM Repo:
 ```
 cd anthos-config-management
 nomos init
+nomos status
 ```
 
-### Deploy App (WIP)
+### Deploy App (EKS WIP)
 ```
 ./_helpers/deploy-app-gke.sh
 ./_helpers/deploy-app-eks.sh
+```
+
+### Testing
+```
+curl http://$INGRESS_GATEWAY
 ```
 ### Troubleshooting
 

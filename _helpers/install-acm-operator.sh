@@ -2,6 +2,8 @@
 
 set -eux
 
+gsutil cp gs://config-management-release/released/latest/config-management-operator.yaml ../anthos-config-management-operator/config-management-operator.yaml
+
 # Gke
 gcloud container clusters get-credentials my-gke-cluster --region=us-central1
 kubectl apply -f ../anthos-config-management-operator/config-management-operator.yaml

@@ -2,7 +2,7 @@
 
 set -eux
 
-export KUBECONFIG=/home/rajesh_debian/.kube/config
+# export KUBECONFIG=/home/rajesh_debian/.kube/config
 export PROJECT_ID=$(gcloud config get-value project)
 export CLUSTER_NAME=my-gke-cluster
 export CLUSTER_LOCATION=us-central1
@@ -49,3 +49,4 @@ kpt cfg set asm gcloud.compute.location ${CLUSTER_LOCATION}
 istioctl install -f asm/cluster/istio-operator.yaml
 kubectl create namespace my-namespace
 kubectl label namespace my-namespace istio-injection=enabled --overwrite
+rm istio-1.6.5-asm.7-linux-amd64.tar.gz

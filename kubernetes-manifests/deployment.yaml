@@ -1,17 +1,22 @@
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
-  name: first-deployment
+  name: my-app
   namespace: my-namespace
-  annotations:
-    configmanagement.gke.io/managed: enabled
+  labels:
+    name: my-app
 spec:
-  replicas: 2
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 1
+    type: RollingUpdate
   template:
     metadata:
       labels:
-        app: first-app
+        name: my-app
     spec:
       containers:
-      - name: nginx
-        image: nginx
+        - image: nginx
+          name: my-app
+          imagePullPolicy: Always
