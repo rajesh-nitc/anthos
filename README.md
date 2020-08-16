@@ -5,8 +5,13 @@ Eks and Gke on Anthos
 ## Getting Started
 
 ### Create and Register Clusters
-Gke cluster: public, regional \
-Eks cluster: public, regional
+Clusters info:
+
+Cluster | Public/Private | Zonal/Regional | Network
+--- | --- | --- | ---
+Gke | Public | Regional | default
+Eks | Public | Regional | default
+
 ```
 ./_helpers/workstation.sh
 cd terraform/environments/dev/create-register-clusters
@@ -26,6 +31,7 @@ cd anthos-service-mesh
 
 Install the ACM Operator:
 ```
+./_helpers/acm-git-creds.sh
 # Add Ssh public key to Github
 ./_helpers/install-acm-operator.sh
 ```
