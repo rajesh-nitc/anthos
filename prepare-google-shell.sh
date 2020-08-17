@@ -43,13 +43,13 @@ fi
 
 # Terraform service account
 export PROJECT_ID=$(gcloud config get-value project)
-TF_SA_NAME=terraform-sa1
-gcloud iam service-accounts create $TF_SA_NAME
-gcloud iam service-accounts keys create $TF_SA_NAME-key.json \
-     --iam-account $TF_SA_NAME@$PROJECT_ID.iam.gserviceaccount.com
+TERRAFORM_SERVICE_ACCOUNT=terraform-sa1
+gcloud iam service-accounts create $TERRAFORM_SERVICE_ACCOUNT
+gcloud iam service-accounts keys create $TERRAFORM_SERVICE_ACCOUNT-key.json \
+     --iam-account $TERRAFORM_SERVICE_ACCOUNT@$PROJECT_ID.iam.gserviceaccount.com
 gcloud projects add-iam-policy-binding \
     $PROJECT_ID \
-    --member serviceAccount:$TF_SA_NAME@$PROJECT_ID.iam.gserviceaccount.com \
+    --member serviceAccount:$TERRAFORM_SERVICE_ACCOUNT@$PROJECT_ID.iam.gserviceaccount.com \
     --role roles/owner
 
 # Allowing gke connect pod to connect to gke hub

@@ -18,7 +18,8 @@ Gke | Public | Regional | default
 Eks | Public | Regional | default
 
 ```
-export GOOGLE_APPLICATION_CREDENTIALS='/home/$USER/terraform-sa1-key.json'
+# Update name of the terraform-sa file name in the below command
+export GOOGLE_APPLICATION_CREDENTIALS=/home/$USER/terraform-sa1-key.json
 cd terraform/environments/dev/create-register-clusters
 terraform init
 terraform validate
@@ -44,7 +45,6 @@ Initialize and Configure ACM Repo:
 ```
 cd anthos-config-management
 nomos init
-nomos status
 ```
 
 ### Deploy App (EKS WIP)
