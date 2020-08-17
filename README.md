@@ -7,6 +7,7 @@ Eks and Gke on Anthos
 ### Prepare Google Cloud Shell Environment
 ```
 gcloud alpha cloud-shell ssh
+gcloud auth login
 git clone https://github.com/rajesh-nitc/anthos.git
 cd anthos
 ./prepare-google-shell.sh "terraform-sa5"
