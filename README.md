@@ -4,7 +4,7 @@ Eks and Gke on Anthos
 
 ## Getting Started
 
-### Prepare Google Shell Environment
+### Prepare Google Cloud Shell Environment
 ```
 ./prepare-google-shell.sh
 ```
