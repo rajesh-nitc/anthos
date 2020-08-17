@@ -8,6 +8,8 @@ Eks and Gke on Anthos
 ```
 gcloud alpha cloud-shell ssh
 gcloud auth login
+export PROJECT_ID=$(gcloud config get-value project)
+gcloud config set project $PROJECT_ID
 git clone https://github.com/rajesh-nitc/anthos.git
 cd anthos
 ./prepare-google-shell.sh "terraform-sa5"
