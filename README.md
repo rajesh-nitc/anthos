@@ -9,7 +9,7 @@ Eks and Gke on Anthos
 gcloud alpha cloud-shell ssh
 git clone https://github.com/rajesh-nitc/anthos.git
 cd anthos
-./prepare-google-shell.sh
+./prepare-google-shell.sh "terraform-sa5"
 ```
 ### Create and Register Clusters
 Clusters info:
@@ -21,7 +21,8 @@ Eks | Public | Regional | default
 
 ```
 # Update name of the terraform-sa file name in the below command
-export GOOGLE_APPLICATION_CREDENTIALS=/home/$USER/<< name of the file >>.json
+export GOOGLE_APPLICATION_CREDENTIALS=/home/$USER/terraform-sa5-key.json
+export TF_VAR_TERRAFORM_SERVICE_ACCOUNT=terraform-sa5
 aws configure
 cd terraform/environments/dev/create-register-clusters
 terraform init

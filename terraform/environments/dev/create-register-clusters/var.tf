@@ -1,6 +1,5 @@
 variable TERRAFORM_SERVICE_ACCOUNT {
   type        = string
-  default     = "first-service-account"
   description = "description"
 }
 

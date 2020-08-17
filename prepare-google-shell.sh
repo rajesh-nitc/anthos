@@ -43,7 +43,7 @@ fi
 
 # Terraform service account
 export PROJECT_ID=$(gcloud config get-value project)
-TERRAFORM_SERVICE_ACCOUNT=terraform-sa1
+TERRAFORM_SERVICE_ACCOUNT=$1
 gcloud iam service-accounts create $TERRAFORM_SERVICE_ACCOUNT
 gcloud iam service-accounts keys create $TERRAFORM_SERVICE_ACCOUNT-key.json \
      --iam-account $TERRAFORM_SERVICE_ACCOUNT@$PROJECT_ID.iam.gserviceaccount.com
