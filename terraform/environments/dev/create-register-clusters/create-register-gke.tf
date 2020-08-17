@@ -70,7 +70,7 @@ resource "null_resource" "register-gke" {
     gcloud container hub memberships register "${google_container_cluster.primary.name}" \
     --project="${var.project_id}" \
     --gke-uri="https://container.googleapis.com/${google_container_cluster.primary.id}" \
-    --service-account-key-file="/home/$USER/${var.TERRAFORM_SERVICE_ACCOUNT}.json"
+    --service-account-key-file="/home/$USER/${var.TERRAFORM_SERVICE_ACCOUNT}-key.json"
     EOT
   }
 
