@@ -1,7 +1,7 @@
 #!/bin/bash
 
 
-export KUBECONFIG=/home/rajesh_debian/anthos/terraform/environments/dev/create-register-clusters/kubeconfig_my-eks-cluster
+export KUBECONFIG=/home/$USER/anthos/terraform/environments/dev/create-register-clusters/kubeconfig_my-eks-cluster
 
 curl -LO https://storage.googleapis.com/gke-release/asm/istio-1.6.5-asm.7-linux-amd64.tar.gz
 tar xzf istio-1.6.5-asm.7-linux-amd64.tar.gz

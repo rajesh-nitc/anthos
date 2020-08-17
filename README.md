@@ -4,6 +4,11 @@ Eks and Gke on Anthos
 
 ## Getting Started
 
+### Prepare Google Shell Environment
+```
+./prepare-google-shell.sh
+aws configure
+```
 ### Create and Register Clusters
 Clusters info:
 
@@ -13,7 +18,7 @@ Gke | Public | Regional | default
 Eks | Public | Regional | default
 
 ```
-./_helpers/workstation.sh
+export GOOGLE_APPLICATION_CREDENTIALS='/home/$USER/terraform-sa1-key.json'
 cd terraform/environments/dev/create-register-clusters
 terraform init
 terraform validate

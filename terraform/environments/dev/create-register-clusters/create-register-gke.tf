@@ -1,13 +1,11 @@
 provider "google" {
   version = "~> 3.8"
-  credentials = file("/home/rajesh_debian/first-service-account.json")
   project     = var.project_id
   region      = var.region
 }
 
 provider "google-beta" {
   version = "~> 3.8"
-  credentials = file("/home/rajesh_debian/first-service-account.json")
   project = var.project_id
   region  = var.region
 }
@@ -72,7 +70,7 @@ resource "null_resource" "register-gke" {
     gcloud container hub memberships register "${google_container_cluster.primary.name}" \
     --project="${var.project_id}" \
     --gke-uri="https://container.googleapis.com/${google_container_cluster.primary.id}" \
-    --service-account-key-file="/home/rajesh_debian/first-service-account.json"
+    --service-account-key-file="/home/$USER/${var.TERRAFORM_SERVICE_ACCOUNT}.json"
     EOT
   }
 

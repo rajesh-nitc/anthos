@@ -9,7 +9,7 @@ gcloud container clusters get-credentials my-gke-cluster --region=us-central1
 kubectl apply -f ../anthos-config-management-operator/config-management-operator.yaml
 kubectl create secret generic git-creds \
 --namespace=config-management-system \
---from-file=ssh=/home/rajesh_debian/acm-git-ssh-keys
+--from-file=ssh=/home/$USER/acm-git-ssh-keys
 kubectl apply -f ../anthos-config-management-operator/config-management-gke.yaml
 
 # Eks

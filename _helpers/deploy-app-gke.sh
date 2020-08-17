@@ -2,5 +2,5 @@
 
 set -eux
 
-export KUBECONFIG=/home/rajesh_debian/.kube/config
+export KUBECONFIG=/home/$USER/.kube/config
 kubectl apply -f ../kubernetes-manifests/

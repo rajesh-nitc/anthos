@@ -43,7 +43,7 @@
 #     --project="${var.project_id}" \
 #     --context="eks_${module.my-cluster.cluster_id}" \
 #     --kubeconfig="./kubeconfig_${module.my-cluster.cluster_id}" \
-#     --service-account-key-file="/home/rajesh_debian/first-service-account.json"
+#     --service-account-key-file="/home/$USER/${var.TERRAFORM_SERVICE_ACCOUNT}.json"
 #     EOT
     
 #   }

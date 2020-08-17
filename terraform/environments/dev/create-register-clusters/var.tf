@@ -1,3 +1,9 @@
+variable TERRAFORM_SERVICE_ACCOUNT {
+  type        = string
+  default     = "terraform-sa1"
+  description = "description"
+}
+
 variable project_id {
   type        = string
   default     = "first-project-283216"
@@ -15,3 +21,4 @@ variable region {
 #   default     = "admin-user"
 #   description = "description"
 # }
+
