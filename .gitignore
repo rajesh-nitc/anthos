@@ -1,2 +1,6 @@
 **.terraform
 **istio-1.6.5*
+**/istio-1.6.5*
+**/kubeconfig_*
+**/terraform.tfstate
+**/terraform.tfstate.*

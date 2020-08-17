@@ -6,6 +6,9 @@ Eks and Gke on Anthos
 
 ### Prepare Google Cloud Shell Environment
 ```
+gcloud alpha cloud-shell ssh
+git clone https://github.com/rajesh-nitc/anthos.git
+cd anthos
 ./prepare-google-shell.sh
 ```
 ### Create and Register Clusters

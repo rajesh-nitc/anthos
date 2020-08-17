@@ -6,6 +6,6 @@ spec:
   clusterName: my-gke-cluster
   git:
     syncRepo: git@github.com:rajesh-nitc/anthos.git
-    syncBranch: 1.0.0
+    syncBranch: master
     secretType: ssh
-    policyDir: "anthos-config-management"
+    policyDir: anthos-config-management

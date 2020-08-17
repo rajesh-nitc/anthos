@@ -13,7 +13,7 @@ kubectl create secret generic git-creds \
 kubectl apply -f ../anthos-config-management-operator/config-management-gke.yaml
 
 # Eks
-# export KUBECONFIG=/home/rajesh_debian/anthos/terraform/environments/dev/create-register-clusters/kubeconfig_my-eks-cluster
+# export KUBECONFIG=/home/$USER/anthos/terraform/environments/dev/create-register-clusters/kubeconfig_my-eks-cluster
 # kubectl apply -f anthos-config-management-operator/config-management-operator.yaml
 # kubectl create secret generic git-creds \
 # --namespace=config-management-system \
